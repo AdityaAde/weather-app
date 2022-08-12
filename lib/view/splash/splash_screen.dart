@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:weather_app/components/background_image.dart';
-import 'package:weather_app/view/home/home_screen.dart';
+// ignore_for_file: use_build_context_synchronously
 
+import 'package:flutter/material.dart';
+
+import '../../components/components.dart';
 import '../../models/weather_model.dart';
+import '../view.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -29,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void getLocationData() async {
     var weatherData = await WeatherModel().getLocationWeather();
-    // ignore: use_build_context_synchronously
+
     Navigator.push(
       context,
       MaterialPageRoute(

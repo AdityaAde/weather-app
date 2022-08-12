@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/weather_model.dart';
-import '../../search_city/city_screen.dart';
+import '../../search_city/search_city_screen.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({

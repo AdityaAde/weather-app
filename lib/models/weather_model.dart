@@ -1,6 +1,5 @@
 import 'package:geolocator/geolocator.dart';
-import 'package:weather_app/services/location.dart';
-import 'package:weather_app/services/network.dart';
+import '../services/services.dart';
 
 class WeatherModel {
   String apiKey = '5352e632cf9f09a11c469d39c87a2d83';

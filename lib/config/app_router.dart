@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../view/splash/splash_screen.dart';
 import '../view/view.dart';
 
 class AppRouter {
