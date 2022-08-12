@@ -22,6 +22,7 @@ class _CityScreenState extends State<CityScreen> {
             Container(
               padding: const EdgeInsets.all(20.0),
               child: TextField(
+                style: const TextStyle(color: Colors.white),
                 decoration: kTextFieldInputDecoration,
                 onChanged: (value) {
                   cityName = value;
