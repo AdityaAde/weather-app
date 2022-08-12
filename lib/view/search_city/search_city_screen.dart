@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/components/background_image.dart';
+import 'package:weather_app/components/field_decoration.dart';
 
-import '../../components/components.dart';
-
-class CityScreen extends StatelessWidget {
-  const CityScreen({Key? key}) : super(key: key);
+class SearchCityScreen extends StatelessWidget {
+  const SearchCityScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    late String cityName;
+    String cityName = '';
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       body: CanvasBackgroundImage(
@@ -24,27 +24,22 @@ class CityScreen extends StatelessWidget {
                 },
               ),
             ),
-            _getWeatherButton(colorScheme, context, cityName),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: colorScheme.primaryContainer,
+                    fixedSize: const Size(160, 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    )),
+                onPressed: () {
+                  Navigator.pop(context, cityName);
+                },
+                child: Text(
+                  'Dapatkan Cuaca',
+                  style: TextStyle(color: colorScheme.primary),
+                )),
           ],
         ),
-      ),
-    );
-  }
-
-  ElevatedButton _getWeatherButton(ColorScheme colorScheme, BuildContext context, String cityName) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-          primary: colorScheme.primaryContainer,
-          fixedSize: const Size(160, 40),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          )),
-      onPressed: () {
-        Navigator.pop(context, cityName);
-      },
-      child: Text(
-        'Dapatkan Cuaca',
-        style: TextStyle(color: colorScheme.primary),
       ),
     );
   }

@@ -125,7 +125,7 @@ class _HomeBodyState extends State<HomeBody> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return const CityScreen();
+                            return const SearchCityScreen();
                           },
                         ),
                       );
