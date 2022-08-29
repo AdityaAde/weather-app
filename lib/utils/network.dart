@@ -13,7 +13,7 @@ class NetworkHelper {
       String data = response.body;
       return jsonDecode(data);
     } else {
-      print(response.statusCode);
+      throw Exception('Error get data API');
     }
   }
 }

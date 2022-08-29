@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/weather_model.dart';
+import '../../../repositories/weather_model.dart';
 import '../../search_city/search_city_screen.dart';
 
 class HomeBody extends StatefulWidget {
@@ -102,6 +102,7 @@ class _HomeBodyState extends State<HomeBody> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                /// Mendapatkan Lokasi Saat Ini
                 CircleAvatar(
                   radius: 30,
                   backgroundColor: colorScheme.primaryContainer,
@@ -116,6 +117,8 @@ class _HomeBodyState extends State<HomeBody> {
                   ),
                 ),
                 const SizedBox(height: 5),
+
+                /// Navigasi ke halaman SEARCH untuk mendapatkan lokasi kota
                 CircleAvatar(
                   radius: 30,
                   backgroundColor: colorScheme.primaryContainer,

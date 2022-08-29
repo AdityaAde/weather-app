@@ -1,2 +1,2 @@
 export 'location.dart';
-export 'network.dart';
+export '../utils/network.dart';

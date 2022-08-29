@@ -3,26 +3,26 @@
 import 'package:flutter/material.dart';
 
 import '../../components/components.dart';
-import '../../models/weather_model.dart';
+import '../../repositories/weather_model.dart';
 import '../view.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   static const String routeName = '/';
 
   static Route route() {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
-      builder: (context) => const SplashScreen(),
+      builder: (context) => const WelcomeScreen(),
     );
   }
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
     super.initState();
@@ -31,7 +31,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void getLocationData() async {
     var weatherData = await WeatherModel().getLocationWeather();
-
     Navigator.push(
       context,
       MaterialPageRoute(

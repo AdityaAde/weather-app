@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/components/background_image.dart';
-import 'package:weather_app/components/field_decoration.dart';
+import '../../components/components.dart';
 
 class SearchCityScreen extends StatelessWidget {
   const SearchCityScreen({Key? key}) : super(key: key);
+
+  static const String routeName = '/search';
+
+  static Route route() {
+    return MaterialPageRoute(
+      settings: const RouteSettings(name: routeName),
+      builder: (context) => const SearchCityScreen(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
