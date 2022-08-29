@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/models/current_location_weather_models.dart';
 
+import '../../../models/current_location_weather_models.dart';
 import '../../../repositories/weather_model.dart';
 
 class HomeBody extends StatefulWidget {
@@ -25,7 +25,6 @@ class _HomeBodyState extends State<HomeBody> {
   @override
   void initState() {
     super.initState();
-
     updateUi(widget.locationWeather!);
   }
 
@@ -108,8 +107,8 @@ class _HomeBodyState extends State<HomeBody> {
                   backgroundColor: colorScheme.primaryContainer,
                   child: InkWell(
                     onTap: () async {
-                      /*  var weatherData = await weather.getLocationWeather();
-                      updateUi(weatherData); */
+                      var weatherData = widget.locationWeather;
+                      updateUi(weatherData!);
                     },
                     child: Center(
                       child: Image.asset('assets/images/location.png'),

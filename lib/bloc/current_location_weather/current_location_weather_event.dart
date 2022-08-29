@@ -8,3 +8,12 @@ abstract class CurrentLocationWeatherEvent extends Equatable {
 }
 
 class GetCurrentLocationWeatherEvent extends CurrentLocationWeatherEvent {}
+
+class GetWeatherSearchCityEvent extends CurrentLocationWeatherEvent {
+  final String cityName;
+
+  const GetWeatherSearchCityEvent({required this.cityName});
+
+  @override
+  List<Object> get props => [cityName];
+}

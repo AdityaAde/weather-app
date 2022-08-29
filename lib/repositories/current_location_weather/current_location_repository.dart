@@ -32,9 +32,11 @@ class CurrentLocationWeatherRepository extends BaseCurrentLocationWeatherReposit
     }
     //===================================================================
 
+    // Fungsi untuk mendapatkan nilai dari lokasi saat ini
     CurrentLocationRepository location = CurrentLocationRepository();
     await location.getCurrentLocation();
 
+    // Fungsi untuk melakukan komunikasi dengan API lalu mendapatkan data response nya
     NetworkHelper networkHelper = NetworkHelper(
       '${StaticData.weatherUrl}?lat=${location.latitude}&lon=${location.longitude}&appid=${StaticData.apiKey}&units=netric',
     );

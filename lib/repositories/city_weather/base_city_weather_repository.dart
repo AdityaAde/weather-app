@@ -1,5 +1,5 @@
-import 'package:weather_app/models/city_weather_models.dart';
+import 'package:weather_app/models/current_location_weather_models.dart';
 
 abstract class BaseCityWeatherRepository {
-  Future<CityWeatherModels> getCityWeather(String cityName);
+  Future<CurrentLocationWeatherModels> getCityWeather(String cityName);
 }
