@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/models/current_location_weather_models.dart';
 
 import '../../../repositories/weather_model.dart';
-import '../../search_city/search_city_screen.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({
@@ -9,7 +9,7 @@ class HomeBody extends StatefulWidget {
     this.locationWeather,
   }) : super(key: key);
 
-  final dynamic locationWeather;
+  final CurrentLocationWeatherModels? locationWeather;
 
   @override
   State<HomeBody> createState() => _HomeBodyState();
@@ -26,22 +26,22 @@ class _HomeBodyState extends State<HomeBody> {
   void initState() {
     super.initState();
 
-    updateUi(widget.locationWeather);
+    updateUi(widget.locationWeather!);
   }
 
-  void updateUi(dynamic weatherData) {
+  void updateUi(CurrentLocationWeatherModels weatherData) {
     setState(() {
-      if (weatherData == null) {
+      if (weatherData.cod != 200) {
         temperature = 0;
         weatherIcon = 'error';
         cityName = 'Kota Tidak Ditemukan';
         description = '';
         return;
       }
-      double temp = weatherData['main']['temp'];
+      double temp = weatherData.main!.temp!;
       temperature = temp.toInt();
-      cityName = weatherData['name'];
-      description = weatherData['weather'][0]['description'];
+      cityName = weatherData.name!;
+      description = weatherData.weather![0].description!;
     });
   }
 
@@ -108,8 +108,8 @@ class _HomeBodyState extends State<HomeBody> {
                   backgroundColor: colorScheme.primaryContainer,
                   child: InkWell(
                     onTap: () async {
-                      var weatherData = await weather.getLocationWeather();
-                      updateUi(weatherData);
+                      /*  var weatherData = await weather.getLocationWeather();
+                      updateUi(weatherData); */
                     },
                     child: Center(
                       child: Image.asset('assets/images/location.png'),
@@ -124,7 +124,7 @@ class _HomeBodyState extends State<HomeBody> {
                   backgroundColor: colorScheme.primaryContainer,
                   child: InkWell(
                     onTap: () async {
-                      var typedName = await Navigator.push(
+                      /*  var typedName = await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
@@ -135,7 +135,7 @@ class _HomeBodyState extends State<HomeBody> {
                       if (typedName != null) {
                         var weatherData = await weather.getCityWeather(typedName);
                         updateUi(weatherData);
-                      }
+                      } */
                     },
                     child: Icon(
                       Icons.near_me,

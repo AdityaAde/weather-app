@@ -5,9 +5,9 @@ class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return WelcomeScreen.route();
-      case '/home':
         return HomeScreen.route();
+      case '/loading':
+        return LoadingScreen.route();
       case '/search':
         return SearchCityScreen.route();
       default:

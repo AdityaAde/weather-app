@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<CurrentLocationWeatherBloc>(
-          create: (context) => CurrentLocationWeatherBloc(),
+          create: (context) => CurrentLocationWeatherBloc()..add(GetCurrentLocationWeatherEvent()),
         ),
       ],
       child: MaterialApp(
