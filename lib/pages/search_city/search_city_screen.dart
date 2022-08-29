@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/bloc/bloc.dart';
+import 'package:weather_app/pages/pages.dart';
 import '../../components/components.dart';
 
 class SearchCityScreen extends StatelessWidget {
@@ -40,7 +43,9 @@ class SearchCityScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     )),
                 onPressed: () {
-                  Navigator.pop(context, cityName);
+                  context.read<CurrentLocationWeatherBloc>().add(GetWeatherSearchCityEvent(cityName: cityName));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+                  //Navigator.pop(context, cityName);
                 },
                 child: Text(
                   'Dapatkan Cuaca',

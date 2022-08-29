@@ -23,7 +23,7 @@ class CurrentLocationWeatherBloc extends Bloc<CurrentLocationWeatherEvent, Curre
     Emitter<CurrentLocationWeatherState> emit,
   ) async {
     final data = await currentLocationWeatherRepository.getCurrentLocationWeather();
-    if (data.cod == 200) {
+    if (data != null) {
       emit(CurrentLocationWeatherLoaded(currentLocationWeather: data));
     } else {
       emit(const CurrentLocationWeatherError(error: 'Get data current location weather error'));
@@ -35,8 +35,9 @@ class CurrentLocationWeatherBloc extends Bloc<CurrentLocationWeatherEvent, Curre
     GetWeatherSearchCityEvent event,
     Emitter<CurrentLocationWeatherState> emit,
   ) async {
+    emit(CurrentLocationWeatherLoading());
     final data = await cityWeatherRepository.getCityWeather(event.cityName);
-    if (data.cod == 200) {
+    if (data != null) {
       emit(CurrentLocationWeatherLoaded(currentLocationWeather: data));
     } else {
       emit(const CurrentLocationWeatherError(error: 'Get data search city location weather error'));

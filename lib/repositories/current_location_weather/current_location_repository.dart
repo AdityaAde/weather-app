@@ -8,7 +8,7 @@ import 'base_current_location_repository.dart';
 
 class CurrentLocationWeatherRepository extends BaseCurrentLocationWeatherRepository {
   @override
-  Future<CurrentLocationWeatherModels> getCurrentLocationWeather() async {
+  Future<CurrentLocationWeatherModels?>? getCurrentLocationWeather() async {
     bool serviceEnabled;
     LocationPermission permission;
 

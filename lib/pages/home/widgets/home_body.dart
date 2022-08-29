@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/bloc/current_location_weather/current_location_weather_bloc.dart';
 
 import '../../../models/current_location_weather_models.dart';
-import '../../../repositories/weather_model.dart';
+import '../../pages.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({
     Key? key,
     this.locationWeather,
+    required this.cityName,
+    required this.temperature,
+    required this.description,
   }) : super(key: key);
 
   final CurrentLocationWeatherModels? locationWeather;
+  final String cityName;
+  final int temperature;
+  final String description;
 
   @override
   State<HomeBody> createState() => _HomeBodyState();
 }
 
 class _HomeBodyState extends State<HomeBody> {
-  WeatherModel weather = WeatherModel();
-  late int temperature;
+  /* late int temperature;
   late String weatherIcon;
   late String cityName;
   late String description;
@@ -30,19 +37,18 @@ class _HomeBodyState extends State<HomeBody> {
 
   void updateUi(CurrentLocationWeatherModels weatherData) {
     setState(() {
-      if (weatherData.cod != 200) {
+      if (weatherData.cod == 404) {
         temperature = 0;
         weatherIcon = 'error';
         cityName = 'Kota Tidak Ditemukan';
         description = '';
-        return;
       }
       double temp = weatherData.main!.temp!;
       temperature = temp.toInt();
       cityName = weatherData.name!;
       description = weatherData.weather![0].description!;
     });
-  }
+  } */
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +65,7 @@ class _HomeBodyState extends State<HomeBody> {
               child: Column(
                 children: [
                   Text(
-                    cityName,
+                    widget.cityName,
                     style: textTheme.headline1,
                     textAlign: TextAlign.center,
                   ),
@@ -68,7 +74,9 @@ class _HomeBodyState extends State<HomeBody> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        (temperature.toString().length < 2) ? '$temperature' : '$temperature'.substring(0, 2),
+                        (widget.temperature.toString().length < 2)
+                            ? '${widget.temperature}'
+                            : '${widget.temperature}'.substring(0, 2),
                         style: textTheme.headline2!.copyWith(
                           fontWeight: FontWeight.w300,
                           fontSize: 35,
@@ -84,7 +92,8 @@ class _HomeBodyState extends State<HomeBody> {
                       ),
                     ],
                   ),
-                  Text(description, style: textTheme.headline4!.copyWith(color: colorScheme.primary.withOpacity(0.5))),
+                  Text(widget.description,
+                      style: textTheme.headline4!.copyWith(color: colorScheme.primary.withOpacity(0.5))),
                 ],
               ),
             ),
@@ -107,8 +116,9 @@ class _HomeBodyState extends State<HomeBody> {
                   backgroundColor: colorScheme.primaryContainer,
                   child: InkWell(
                     onTap: () async {
-                      var weatherData = widget.locationWeather;
-                      updateUi(weatherData!);
+                      context.read<CurrentLocationWeatherBloc>().add(GetCurrentLocationWeatherEvent());
+                      //var weatherData = widget.locationWeather;
+                      //updateUi(weatherData!);
                     },
                     child: Center(
                       child: Image.asset('assets/images/location.png'),
@@ -123,7 +133,7 @@ class _HomeBodyState extends State<HomeBody> {
                   backgroundColor: colorScheme.primaryContainer,
                   child: InkWell(
                     onTap: () async {
-                      /*  var typedName = await Navigator.push(
+                      var typedName = await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
@@ -132,9 +142,8 @@ class _HomeBodyState extends State<HomeBody> {
                         ),
                       );
                       if (typedName != null) {
-                        var weatherData = await weather.getCityWeather(typedName);
-                        updateUi(weatherData);
-                      } */
+                        //updateUi(widget.locationWeather!);
+                      }
                     },
                     child: Icon(
                       Icons.near_me,

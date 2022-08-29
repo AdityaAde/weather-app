@@ -29,7 +29,23 @@ class HomeScreen extends StatelessWidget {
           return Scaffold(
             body: SingleChildScrollView(
               child: CanvasBackgroundImage(
-                widget: HomeBody(locationWeather: state.currentLocationWeather),
+                widget: HomeBody(
+                  cityName: state.currentLocationWeather.name!,
+                  temperature: state.currentLocationWeather.main!.temp!.toInt(),
+                  description: state.currentLocationWeather.weather![0].description!,
+                ),
+              ),
+            ),
+          );
+        } else if (state is CurrentLocationWeatherError) {
+          return const Scaffold(
+            body: SingleChildScrollView(
+              child: CanvasBackgroundImage(
+                widget: HomeBody(
+                  cityName: 'Kota tidak ditemukan',
+                  temperature: 0,
+                  description: '',
+                ),
               ),
             ),
           );

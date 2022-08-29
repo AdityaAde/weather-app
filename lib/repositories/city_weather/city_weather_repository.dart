@@ -5,12 +5,20 @@ import 'city_weather.dart';
 
 class CityWeatherRepository extends BaseCityWeatherRepository {
   @override
-  Future<CurrentLocationWeatherModels> getCityWeather(String cityName) async {
+  Future<CurrentLocationWeatherModels?>? getCityWeather(String cityName) async {
     NetworkHelper networkHelper = NetworkHelper(
       '${StaticData.weatherUrl}?q=$cityName&appid=${StaticData.apiKey}&units=netric',
     );
 
-    var weatherData = await networkHelper.getData();
-    return CurrentLocationWeatherModels.fromJson(weatherData);
+    try {
+      var weatherData = await networkHelper.getData();
+      if (weatherData != null) {
+        return CurrentLocationWeatherModels.fromJson(weatherData);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      throw Exception(e);
+    }
   }
 }

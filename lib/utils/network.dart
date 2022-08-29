@@ -11,8 +11,9 @@ class NetworkHelper {
 
     try {
       if (response.statusCode == 200) {
-        String data = response.body;
-        return jsonDecode(data);
+        return jsonDecode(response.body);
+      } else {
+        return null;
       }
     } catch (e) {
       return throw Exception(e);
