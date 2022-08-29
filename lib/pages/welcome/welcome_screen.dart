@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../components/components.dart';
 import '../../repositories/weather_model.dart';
-import '../view.dart';
+import '../pages.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

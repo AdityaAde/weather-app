@@ -9,11 +9,13 @@ class NetworkHelper {
   Future getData() async {
     http.Response response = await http.get(Uri.parse(url));
 
-    if (response.statusCode == 200) {
-      String data = response.body;
-      return jsonDecode(data);
-    } else {
-      throw Exception('Error get data API');
+    try {
+      if (response.statusCode == 200) {
+        String data = response.body;
+        return jsonDecode(data);
+      }
+    } catch (e) {
+      return throw Exception(e);
     }
   }
 }

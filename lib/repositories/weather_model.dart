@@ -1,7 +1,8 @@
 import 'package:geolocator/geolocator.dart';
+import 'package:weather_app/repositories/current_location/current_location_repository.dart';
 
 import '../config/static_data.dart';
-import '../services/services.dart';
+import '../utils/network.dart';
 
 class WeatherModel {
   Future<dynamic> getCityWeather(String cityName) async {
@@ -35,7 +36,7 @@ class WeatherModel {
       return Future.error('Location permissions are permanently denied, we cannot request permissions.');
     }
 
-    Location location = Location();
+    CurrentLocationRepository location = CurrentLocationRepository();
     await location.getCurrentLocation();
 
     NetworkHelper networkHelper = NetworkHelper(

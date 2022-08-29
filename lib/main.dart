@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'bloc/bloc.dart';
 import 'config/config.dart';
 
 void main() {
@@ -16,12 +19,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Weather App',
-      theme: theme(),
-      onGenerateRoute: AppRouter.onGenerateRoute,
-      initialRoute: '/',
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CurrentLocationWeatherBloc>(
+          create: (context) => CurrentLocationWeatherBloc(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Weather App',
+        theme: theme(),
+        onGenerateRoute: AppRouter.onGenerateRoute,
+        initialRoute: '/',
+      ),
     );
   }
 }
