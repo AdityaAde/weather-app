@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/bloc/current_location_weather/current_location_weather_bloc.dart';
-
 import '../../../models/current_location_weather_models.dart';
-import '../../pages.dart';
+import 'weather_forecast.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({
@@ -24,32 +21,6 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
-  /* late int temperature;
-  late String weatherIcon;
-  late String cityName;
-  late String description;
-
-  @override
-  void initState() {
-    super.initState();
-    updateUi(widget.locationWeather!);
-  }
-
-  void updateUi(CurrentLocationWeatherModels weatherData) {
-    setState(() {
-      if (weatherData.cod == 404) {
-        temperature = 0;
-        weatherIcon = 'error';
-        cityName = 'Kota Tidak Ditemukan';
-        description = '';
-      }
-      double temp = weatherData.main!.temp!;
-      temperature = temp.toInt();
-      cityName = weatherData.name!;
-      description = weatherData.weather![0].description!;
-    });
-  } */
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -103,58 +74,9 @@ class _HomeBodyState extends State<HomeBody> {
             )
           ],
         ),
-        Align(
-          alignment: Alignment.bottomRight,
-          child: Padding(
-            padding: const EdgeInsets.only(right: 25, bottom: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                /// Mendapatkan Lokasi Saat Ini
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: colorScheme.primaryContainer,
-                  child: InkWell(
-                    onTap: () async {
-                      context.read<CurrentLocationWeatherBloc>().add(GetCurrentLocationWeatherEvent());
-                      //var weatherData = widget.locationWeather;
-                      //updateUi(weatherData!);
-                    },
-                    child: Center(
-                      child: Image.asset('assets/images/location.png'),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 5),
 
-                /// Navigasi ke halaman SEARCH untuk mendapatkan lokasi kota
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: colorScheme.primaryContainer,
-                  child: InkWell(
-                    onTap: () async {
-                      var typedName = await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const SearchCityScreen();
-                          },
-                        ),
-                      );
-                      if (typedName != null) {
-                        //updateUi(widget.locationWeather!);
-                      }
-                    },
-                    child: Icon(
-                      Icons.near_me,
-                      color: Colors.white.withOpacity(0.8),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        // Weather forecast
+        const WeatherForecast(),
       ],
     );
   }
