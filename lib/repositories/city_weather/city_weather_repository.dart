@@ -1,6 +1,6 @@
-import '../../config/static_data.dart';
+import '../../component/static_data.dart';
 import '../../models/current_location_weather_models.dart';
-import '../../utils/network.dart';
+import '../../helper/network.dart';
 import 'city_weather.dart';
 
 class CityWeatherRepository extends BaseCityWeatherRepository {

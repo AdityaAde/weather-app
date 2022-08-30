@@ -1,8 +1,8 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_app/repositories/current_location/current_location_repository.dart';
 
-import '../config/static_data.dart';
-import '../utils/network.dart';
+import '../component/static_data.dart';
+import '../helper/network.dart';
 
 class WeatherModel {
   Future<dynamic> getCityWeather(String cityName) async {

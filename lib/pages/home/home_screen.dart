@@ -4,7 +4,7 @@ import 'package:weather_app/pages/pages.dart';
 
 import 'widgets/home_body.dart';
 import '../../bloc/bloc.dart';
-import '../../components/components.dart';
+import '../../widgets/components.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key, this.locationWeather}) : super(key: key);

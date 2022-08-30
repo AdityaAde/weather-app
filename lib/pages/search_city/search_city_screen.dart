@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/bloc/bloc.dart';
 import 'package:weather_app/pages/pages.dart';
-import '../../components/components.dart';
+import '../../utilities/field_decoration.dart';
+import '../../widgets/components.dart';
 
 class SearchCityScreen extends StatelessWidget {
   const SearchCityScreen({Key? key}) : super(key: key);

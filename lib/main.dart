@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/bloc.dart';
-import 'config/config.dart';
+import 'component/config.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
