@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../models/current_location_weather_models/current_location_weather_models.dart';
+import '../../../widgets/text_celcius.dart';
 import 'weather_forecast.dart';
 
 class HomeBody extends StatefulWidget {
@@ -44,21 +45,12 @@ class _HomeBodyState extends State<HomeBody> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        (widget.temperature.toString().length < 2)
-                            ? '${widget.temperature}'
-                            : '${widget.temperature}'.substring(0, 2),
+                      CelciusText(
+                        text: widget.temperature.toString(),
+                        sizeCelcius: 18,
                         style: textTheme.headline2!.copyWith(
                           fontWeight: FontWeight.w300,
                           fontSize: 35,
-                        ),
-                      ),
-                      const SizedBox(width: 3),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 10),
-                        child: Text(
-                          '\u2103',
-                          style: TextStyle(fontSize: 18),
                         ),
                       ),
                     ],

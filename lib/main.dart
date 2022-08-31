@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<WeatherForecastCubit>(create: (_) => WeatherForecastCubit()..getCurrenLocationtWeatherForecast()),
         BlocProvider<CurrentLocationWeatherBloc>(
           create: (context) => CurrentLocationWeatherBloc()..add(GetCurrentLocationWeatherEvent()),
         ),

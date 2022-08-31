@@ -1,10 +1,14 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 import '../../../bloc/bloc.dart';
 import '../../pages.dart';
+import 'weather_forecast_card.dart';
 
 class WeatherForecast extends StatelessWidget {
   const WeatherForecast({
@@ -96,43 +100,71 @@ class WeatherForecast extends StatelessWidget {
     );
   }
 
-  Expanded _dataWeatherForecast(TextTheme textTheme) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount: 5,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 15),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF48319D).withOpacity(0.7),
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
-                    ),
-                    height: 100,
-                    width: 65,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            '30/08/2022',
-                            style: textTheme.bodyText2!.copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          Text('clear sky', style: textTheme.bodyText2),
-                          Text('29 Derajat', style: textTheme.bodyText2),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+  Widget _dataWeatherForecast(TextTheme textTheme) {
+    return BlocBuilder<WeatherForecastCubit, WeatherForecastState>(
+      builder: (context, state) {
+        return state.when(loading: () {
+          return const Center(child: Text('Data tidak ditemukan'));
+        }, loaded: ((dataWeatherForecast) {
+          /// =====================================================================
+          /// Data perkiraan cuaca dalam 5 Hari
+          final dateTime1 = DateTime.tryParse(dataWeatherForecast.list[0].dtTxt);
+          String formattedDate1 = DateFormat('dd-MM-yyyy').format(dateTime1!);
+          final dateTime2 = DateTime.tryParse(dataWeatherForecast.list[6].dtTxt);
+          String formattedDate2 = DateFormat('dd-MM-yyyy').format(dateTime2!);
+          final dateTime3 = DateTime.tryParse(dataWeatherForecast.list[14].dtTxt);
+          String formattedDate3 = DateFormat('dd-MM-yyyy').format(dateTime3!);
+          final dateTime4 = DateTime.tryParse(dataWeatherForecast.list[22].dtTxt);
+          String formattedDate4 = DateFormat('dd-MM-yyyy').format(dateTime4!);
+          final dateTime5 = DateTime.tryParse(dataWeatherForecast.list[30].dtTxt);
+          String formattedDate5 = DateFormat('dd-MM-yyyy').format(dateTime5!);
+
+          /// =====================================================================
+          return Row(
+            children: [
+              Expanded(
+                child: WeatherForecastCard(
+                  formattedDate: formattedDate1,
+                  description: dataWeatherForecast.list[0].weather[0].description,
+                  temperature: dataWeatherForecast.list[0].main.temp.toString(),
+                ),
               ),
-            );
-          }),
+              Expanded(
+                child: WeatherForecastCard(
+                  formattedDate: formattedDate2,
+                  description: dataWeatherForecast.list[6].weather[0].description,
+                  temperature: dataWeatherForecast.list[6].main.temp.toString(),
+                ),
+              ),
+              Expanded(
+                child: WeatherForecastCard(
+                  formattedDate: formattedDate3,
+                  description: dataWeatherForecast.list[14].weather[0].description,
+                  temperature: dataWeatherForecast.list[14].main.temp.toString(),
+                ),
+              ),
+              Expanded(
+                child: WeatherForecastCard(
+                  formattedDate: formattedDate4,
+                  description: dataWeatherForecast.list[22].weather[0].description,
+                  temperature: dataWeatherForecast.list[22].main.temp.toString(),
+                ),
+              ),
+              Expanded(
+                child: WeatherForecastCard(
+                  formattedDate: formattedDate5,
+                  description: dataWeatherForecast.list[30].weather[0].description,
+                  temperature: dataWeatherForecast.list[30].main.temp.toString(),
+                ),
+              ),
+            ],
+          );
+        }), error: ((error) {
+          return Center(
+            child: Text(error),
+          );
+        }));
+      },
     );
   }
 }

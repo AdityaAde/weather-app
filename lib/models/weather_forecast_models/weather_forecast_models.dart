@@ -9,30 +9,30 @@ part 'weather_forecast_models.g.dart';
 class WeatherForecastModels with _$WeatherForecastModels {
   const factory WeatherForecastModels({
     required String cod,
-    required List<ListElement> list,
+    required List<ElementModels> list,
   }) = _WeatherForecastModels;
 
   factory WeatherForecastModels.fromJson(Map<String, dynamic> json) => _$WeatherForecastModelsFromJson(json);
 }
 
 @freezed
-class ListElement with _$ListElement {
-  const factory ListElement({
-    required MainClass main,
+class ElementModels with _$ElementModels {
+  const factory ElementModels({
+    required MainModels main,
     required List<Weather> weather,
     required String dtTxt,
-  }) = _ListElement;
+  }) = _ElementModels;
 
-  factory ListElement.fromJson(Map<String, dynamic> json) => _$ListElementFromJson(json);
+  factory ElementModels.fromJson(Map<String, dynamic> json) => _$ElementModelsFromJson(json);
 }
 
 @freezed
-class MainClass with _$MainClass {
-  const factory MainClass({
+class MainModels with _$MainModels {
+  const factory MainModels({
     required double temp,
-  }) = _MainClass;
+  }) = _MainModels;
 
-  factory MainClass.fromJson(Map<String, dynamic> json) => _$MainClassFromJson(json);
+  factory MainModels.fromJson(Map<String, dynamic> json) => _$MainModelsFromJson(json);
 }
 
 @freezed
