@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../models/current_location_weather_models.dart';
+import '../../../models/current_location_weather_models/current_location_weather_models.dart';
 import 'weather_forecast.dart';
 
 class HomeBody extends StatefulWidget {

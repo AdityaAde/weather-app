@@ -14,30 +14,33 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-WeatherForecastModels _$WeatherForecastModelsFromJson(Map<String, dynamic> json) {
+WeatherForecastModels _$WeatherForecastModelsFromJson(
+    Map<String, dynamic> json) {
   return _WeatherForecastModels.fromJson(json);
 }
 
 /// @nodoc
 mixin _$WeatherForecastModels {
-  String get cod => throw _privateConstructorUsedError; //  required int message,
-// required int cnt,
+  String get cod => throw _privateConstructorUsedError;
   List<ListElement> get list => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WeatherForecastModelsCopyWith<WeatherForecastModels> get copyWith => throw _privateConstructorUsedError;
+  $WeatherForecastModelsCopyWith<WeatherForecastModels> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $WeatherForecastModelsCopyWith<$Res> {
-  factory $WeatherForecastModelsCopyWith(WeatherForecastModels value, $Res Function(WeatherForecastModels) then) =
+  factory $WeatherForecastModelsCopyWith(WeatherForecastModels value,
+          $Res Function(WeatherForecastModels) then) =
       _$WeatherForecastModelsCopyWithImpl<$Res>;
   $Res call({String cod, List<ListElement> list});
 }
 
 /// @nodoc
-class _$WeatherForecastModelsCopyWithImpl<$Res> implements $WeatherForecastModelsCopyWith<$Res> {
+class _$WeatherForecastModelsCopyWithImpl<$Res>
+    implements $WeatherForecastModelsCopyWith<$Res> {
   _$WeatherForecastModelsCopyWithImpl(this._value, this._then);
 
   final WeatherForecastModels _value;
@@ -63,22 +66,26 @@ class _$WeatherForecastModelsCopyWithImpl<$Res> implements $WeatherForecastModel
 }
 
 /// @nodoc
-abstract class _$$_WeatherForecastModelsCopyWith<$Res> implements $WeatherForecastModelsCopyWith<$Res> {
-  factory _$$_WeatherForecastModelsCopyWith(
-          _$_WeatherForecastModels value, $Res Function(_$_WeatherForecastModels) then) =
+abstract class _$$_WeatherForecastModelsCopyWith<$Res>
+    implements $WeatherForecastModelsCopyWith<$Res> {
+  factory _$$_WeatherForecastModelsCopyWith(_$_WeatherForecastModels value,
+          $Res Function(_$_WeatherForecastModels) then) =
       __$$_WeatherForecastModelsCopyWithImpl<$Res>;
   @override
   $Res call({String cod, List<ListElement> list});
 }
 
 /// @nodoc
-class __$$_WeatherForecastModelsCopyWithImpl<$Res> extends _$WeatherForecastModelsCopyWithImpl<$Res>
+class __$$_WeatherForecastModelsCopyWithImpl<$Res>
+    extends _$WeatherForecastModelsCopyWithImpl<$Res>
     implements _$$_WeatherForecastModelsCopyWith<$Res> {
-  __$$_WeatherForecastModelsCopyWithImpl(_$_WeatherForecastModels _value, $Res Function(_$_WeatherForecastModels) _then)
+  __$$_WeatherForecastModelsCopyWithImpl(_$_WeatherForecastModels _value,
+      $Res Function(_$_WeatherForecastModels) _then)
       : super(_value, (v) => _then(v as _$_WeatherForecastModels));
 
   @override
-  _$_WeatherForecastModels get _value => super._value as _$_WeatherForecastModels;
+  _$_WeatherForecastModels get _value =>
+      super._value as _$_WeatherForecastModels;
 
   @override
   $Res call({
@@ -101,14 +108,16 @@ class __$$_WeatherForecastModelsCopyWithImpl<$Res> extends _$WeatherForecastMode
 /// @nodoc
 @JsonSerializable()
 class _$_WeatherForecastModels implements _WeatherForecastModels {
-  const _$_WeatherForecastModels({required this.cod, required final List<ListElement> list}) : _list = list;
+  const _$_WeatherForecastModels(
+      {required this.cod, required final List<ListElement> list})
+      : _list = list;
 
-  factory _$_WeatherForecastModels.fromJson(Map<String, dynamic> json) => _$$_WeatherForecastModelsFromJson(json);
+  factory _$_WeatherForecastModels.fromJson(Map<String, dynamic> json) =>
+      _$$_WeatherForecastModelsFromJson(json);
 
   @override
   final String cod;
   final List<ListElement> _list;
-
   @override
   List<ListElement> get list {
     // ignore: implicit_dynamic_type
@@ -131,13 +140,16 @@ class _$_WeatherForecastModels implements _WeatherForecastModels {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(cod), const DeepCollectionEquality().hash(_list));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(cod),
+      const DeepCollectionEquality().hash(_list));
 
   @JsonKey(ignore: true)
   @override
   _$$_WeatherForecastModelsCopyWith<_$_WeatherForecastModels> get copyWith =>
-      __$$_WeatherForecastModelsCopyWithImpl<_$_WeatherForecastModels>(this, _$identity);
+      __$$_WeatherForecastModelsCopyWithImpl<_$_WeatherForecastModels>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -148,10 +160,12 @@ class _$_WeatherForecastModels implements _WeatherForecastModels {
 }
 
 abstract class _WeatherForecastModels implements WeatherForecastModels {
-  const factory _WeatherForecastModels({required final String cod, required final List<ListElement> list}) =
-      _$_WeatherForecastModels;
+  const factory _WeatherForecastModels(
+      {required final String cod,
+      required final List<ListElement> list}) = _$_WeatherForecastModels;
 
-  factory _WeatherForecastModels.fromJson(Map<String, dynamic> json) = _$_WeatherForecastModels.fromJson;
+  factory _WeatherForecastModels.fromJson(Map<String, dynamic> json) =
+      _$_WeatherForecastModels.fromJson;
 
   @override
   String get cod;
@@ -159,7 +173,8 @@ abstract class _WeatherForecastModels implements WeatherForecastModels {
   List<ListElement> get list;
   @override
   @JsonKey(ignore: true)
-  _$$_WeatherForecastModelsCopyWith<_$_WeatherForecastModels> get copyWith => throw _privateConstructorUsedError;
+  _$$_WeatherForecastModelsCopyWith<_$_WeatherForecastModels> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 ListElement _$ListElementFromJson(Map<String, dynamic> json) {
@@ -168,19 +183,21 @@ ListElement _$ListElementFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ListElement {
-//required int dt,
   MainClass get main => throw _privateConstructorUsedError;
   List<Weather> get weather => throw _privateConstructorUsedError;
   String get dtTxt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ListElementCopyWith<ListElement> get copyWith => throw _privateConstructorUsedError;
+  $ListElementCopyWith<ListElement> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListElementCopyWith<$Res> {
-  factory $ListElementCopyWith(ListElement value, $Res Function(ListElement) then) = _$ListElementCopyWithImpl<$Res>;
+  factory $ListElementCopyWith(
+          ListElement value, $Res Function(ListElement) then) =
+      _$ListElementCopyWithImpl<$Res>;
   $Res call({MainClass main, List<Weather> weather, String dtTxt});
 
   $MainClassCopyWith<$Res> get main;
@@ -225,8 +242,10 @@ class _$ListElementCopyWithImpl<$Res> implements $ListElementCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_ListElementCopyWith<$Res> implements $ListElementCopyWith<$Res> {
-  factory _$$_ListElementCopyWith(_$_ListElement value, $Res Function(_$_ListElement) then) =
+abstract class _$$_ListElementCopyWith<$Res>
+    implements $ListElementCopyWith<$Res> {
+  factory _$$_ListElementCopyWith(
+          _$_ListElement value, $Res Function(_$_ListElement) then) =
       __$$_ListElementCopyWithImpl<$Res>;
   @override
   $Res call({MainClass main, List<Weather> weather, String dtTxt});
@@ -238,7 +257,8 @@ abstract class _$$_ListElementCopyWith<$Res> implements $ListElementCopyWith<$Re
 /// @nodoc
 class __$$_ListElementCopyWithImpl<$Res> extends _$ListElementCopyWithImpl<$Res>
     implements _$$_ListElementCopyWith<$Res> {
-  __$$_ListElementCopyWithImpl(_$_ListElement _value, $Res Function(_$_ListElement) _then)
+  __$$_ListElementCopyWithImpl(
+      _$_ListElement _value, $Res Function(_$_ListElement) _then)
       : super(_value, (v) => _then(v as _$_ListElement));
 
   @override
@@ -270,10 +290,14 @@ class __$$_ListElementCopyWithImpl<$Res> extends _$ListElementCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ListElement implements _ListElement {
-  const _$_ListElement({required this.main, required final List<Weather> weather, required this.dtTxt})
+  const _$_ListElement(
+      {required this.main,
+      required final List<Weather> weather,
+      required this.dtTxt})
       : _weather = weather;
 
-  factory _$_ListElement.fromJson(Map<String, dynamic> json) => _$$_ListElementFromJson(json);
+  factory _$_ListElement.fromJson(Map<String, dynamic> json) =>
+      _$$_ListElementFromJson(json);
 
   @override
   final MainClass main;
@@ -304,8 +328,11 @@ class _$_ListElement implements _ListElement {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(main),
-      const DeepCollectionEquality().hash(_weather), const DeepCollectionEquality().hash(dtTxt));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(main),
+      const DeepCollectionEquality().hash(_weather),
+      const DeepCollectionEquality().hash(dtTxt));
 
   @JsonKey(ignore: true)
   @override
@@ -326,7 +353,8 @@ abstract class _ListElement implements ListElement {
       required final List<Weather> weather,
       required final String dtTxt}) = _$_ListElement;
 
-  factory _ListElement.fromJson(Map<String, dynamic> json) = _$_ListElement.fromJson;
+  factory _ListElement.fromJson(Map<String, dynamic> json) =
+      _$_ListElement.fromJson;
 
   @override
   MainClass get main;
@@ -336,7 +364,8 @@ abstract class _ListElement implements ListElement {
   String get dtTxt;
   @override
   @JsonKey(ignore: true)
-  _$$_ListElementCopyWith<_$_ListElement> get copyWith => throw _privateConstructorUsedError;
+  _$$_ListElementCopyWith<_$_ListElement> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 MainClass _$MainClassFromJson(Map<String, dynamic> json) {
@@ -349,12 +378,14 @@ mixin _$MainClass {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MainClassCopyWith<MainClass> get copyWith => throw _privateConstructorUsedError;
+  $MainClassCopyWith<MainClass> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MainClassCopyWith<$Res> {
-  factory $MainClassCopyWith(MainClass value, $Res Function(MainClass) then) = _$MainClassCopyWithImpl<$Res>;
+  factory $MainClassCopyWith(MainClass value, $Res Function(MainClass) then) =
+      _$MainClassCopyWithImpl<$Res>;
   $Res call({double temp});
 }
 
@@ -381,15 +412,18 @@ class _$MainClassCopyWithImpl<$Res> implements $MainClassCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$_MainClassCopyWith<$Res> implements $MainClassCopyWith<$Res> {
-  factory _$$_MainClassCopyWith(_$_MainClass value, $Res Function(_$_MainClass) then) =
+  factory _$$_MainClassCopyWith(
+          _$_MainClass value, $Res Function(_$_MainClass) then) =
       __$$_MainClassCopyWithImpl<$Res>;
   @override
   $Res call({double temp});
 }
 
 /// @nodoc
-class __$$_MainClassCopyWithImpl<$Res> extends _$MainClassCopyWithImpl<$Res> implements _$$_MainClassCopyWith<$Res> {
-  __$$_MainClassCopyWithImpl(_$_MainClass _value, $Res Function(_$_MainClass) _then)
+class __$$_MainClassCopyWithImpl<$Res> extends _$MainClassCopyWithImpl<$Res>
+    implements _$$_MainClassCopyWith<$Res> {
+  __$$_MainClassCopyWithImpl(
+      _$_MainClass _value, $Res Function(_$_MainClass) _then)
       : super(_value, (v) => _then(v as _$_MainClass));
 
   @override
@@ -413,7 +447,8 @@ class __$$_MainClassCopyWithImpl<$Res> extends _$MainClassCopyWithImpl<$Res> imp
 class _$_MainClass implements _MainClass {
   const _$_MainClass({required this.temp});
 
-  factory _$_MainClass.fromJson(Map<String, dynamic> json) => _$$_MainClassFromJson(json);
+  factory _$_MainClass.fromJson(Map<String, dynamic> json) =>
+      _$$_MainClassFromJson(json);
 
   @override
   final double temp;
@@ -433,11 +468,13 @@ class _$_MainClass implements _MainClass {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(temp));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(temp));
 
   @JsonKey(ignore: true)
   @override
-  _$$_MainClassCopyWith<_$_MainClass> get copyWith => __$$_MainClassCopyWithImpl<_$_MainClass>(this, _$identity);
+  _$$_MainClassCopyWith<_$_MainClass> get copyWith =>
+      __$$_MainClassCopyWithImpl<_$_MainClass>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -450,13 +487,15 @@ class _$_MainClass implements _MainClass {
 abstract class _MainClass implements MainClass {
   const factory _MainClass({required final double temp}) = _$_MainClass;
 
-  factory _MainClass.fromJson(Map<String, dynamic> json) = _$_MainClass.fromJson;
+  factory _MainClass.fromJson(Map<String, dynamic> json) =
+      _$_MainClass.fromJson;
 
   @override
   double get temp;
   @override
   @JsonKey(ignore: true)
-  _$$_MainClassCopyWith<_$_MainClass> get copyWith => throw _privateConstructorUsedError;
+  _$$_MainClassCopyWith<_$_MainClass> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Weather _$WeatherFromJson(Map<String, dynamic> json) {
@@ -474,7 +513,8 @@ mixin _$Weather {
 
 /// @nodoc
 abstract class $WeatherCopyWith<$Res> {
-  factory $WeatherCopyWith(Weather value, $Res Function(Weather) then) = _$WeatherCopyWithImpl<$Res>;
+  factory $WeatherCopyWith(Weather value, $Res Function(Weather) then) =
+      _$WeatherCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
@@ -501,13 +541,16 @@ class _$WeatherCopyWithImpl<$Res> implements $WeatherCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$_WeatherCopyWith<$Res> implements $WeatherCopyWith<$Res> {
-  factory _$$_WeatherCopyWith(_$_Weather value, $Res Function(_$_Weather) then) = __$$_WeatherCopyWithImpl<$Res>;
+  factory _$$_WeatherCopyWith(
+          _$_Weather value, $Res Function(_$_Weather) then) =
+      __$$_WeatherCopyWithImpl<$Res>;
   @override
   $Res call({String description});
 }
 
 /// @nodoc
-class __$$_WeatherCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res> implements _$$_WeatherCopyWith<$Res> {
+class __$$_WeatherCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res>
+    implements _$$_WeatherCopyWith<$Res> {
   __$$_WeatherCopyWithImpl(_$_Weather _value, $Res Function(_$_Weather) _then)
       : super(_value, (v) => _then(v as _$_Weather));
 
@@ -532,7 +575,8 @@ class __$$_WeatherCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res> impleme
 class _$_Weather implements _Weather {
   const _$_Weather({required this.description});
 
-  factory _$_Weather.fromJson(Map<String, dynamic> json) => _$$_WeatherFromJson(json);
+  factory _$_Weather.fromJson(Map<String, dynamic> json) =>
+      _$$_WeatherFromJson(json);
 
   @override
   final String description;
@@ -547,16 +591,19 @@ class _$_Weather implements _Weather {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Weather &&
-            const DeepCollectionEquality().equals(other.description, description));
+            const DeepCollectionEquality()
+                .equals(other.description, description));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(description));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(description));
 
   @JsonKey(ignore: true)
   @override
-  _$$_WeatherCopyWith<_$_Weather> get copyWith => __$$_WeatherCopyWithImpl<_$_Weather>(this, _$identity);
+  _$$_WeatherCopyWith<_$_Weather> get copyWith =>
+      __$$_WeatherCopyWithImpl<_$_Weather>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -575,5 +622,6 @@ abstract class _Weather implements Weather {
   String get description;
   @override
   @JsonKey(ignore: true)
-  _$$_WeatherCopyWith<_$_Weather> get copyWith => throw _privateConstructorUsedError;
+  _$$_WeatherCopyWith<_$_Weather> get copyWith =>
+      throw _privateConstructorUsedError;
 }

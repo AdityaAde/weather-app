@@ -1,34 +1,47 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:weather_app/models/weather_forecast_models.dart';
-import 'package:weather_app/repositories/city_weather/city_weather_repository.dart';
-import 'package:weather_app/repositories/current_location_weather/current_location_weather.dart';
+import 'package:weather_app/models/weather_forecast_models/weather_forecast_models.dart';
 
 void main() async {
-  CityWeatherRepository cityWeatherRepository = CityWeatherRepository();
+  /// Mendapatkan hasil cuaca dari lokasi terkini dan pencarian kota
+  /// ==================================================================================================
+  /* CityWeatherRepository cityWeatherRepository = CityWeatherRepository();
   await cityWeatherRepository.getCityWeather('Jatibening');
 
   CurrentLocationWeatherRepository currentLocationWeatherRepository = CurrentLocationWeatherRepository();
-  await currentLocationWeatherRepository.getCurrentLocationWeather();
+  await currentLocationWeatherRepository.getCurrentLocationWeather(); */
+  /// ==================================================================================================
 
-  /// Mendapatkan hasil response dari cuaca pada lokasi saat ini
-  /// ==========================================================
+  /// Mendapatkan hasil response dari perkiraan cuaca pada lokasi saat ini
+
+  /// ==================================================================================================
   /* final response = await getWeatherForecastWithModels();
   print(response.list[0].dtTxt);
   print(response.list[0].main.temp);
   print(response.list[0].weather[0].description); */
-  /// ==========================================================
+  /// ==================================================================================================
 
   /// Hasil data ramalan cuaca selama 6 hari
-  /// /// ==========================================================
+  /// ==================================================================================================
   /* print(result["list"][0]["dt_txt"]);
   print(result["list"][6]["dt_txt"]);
   print(result["list"][14]["dt_txt"]);
   print(result["list"][22]["dt_txt"]);
   print(result["list"][30]["dt_txt"]);
   print(result["list"][38]["dt_txt"]); */
-  /// ==========================================================
+  /// ==================================================================================================
+
+  /// Mendapatkan hasil response dari perkiraan cuaca pada lokasi saat ini menggunakan chopper
+  /// ==================================================================================================
+  /* final forecastCurrentLocation = WeatherForecastCurrentLocationService.create();
+  final response = await forecastCurrentLocation.getWeatherForecastCurrentLocation(
+    35.toString(),
+    139.toString(),
+    StaticData.apiKey,
+  );
+  print(response.body); */
+  /// ==================================================================================================
 }
 
 Future<http.Response> getWeatherForecast() async {

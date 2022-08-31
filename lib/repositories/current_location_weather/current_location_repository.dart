@@ -1,7 +1,7 @@
 import 'package:geolocator/geolocator.dart';
 
 import '../../component/static_data.dart';
-import '../../models/current_location_weather_models.dart';
+import '../../models/current_location_weather_models/current_location_weather_models.dart';
 import '../../helper/network.dart';
 import '../current_location/current_location.dart';
 import 'base_current_location_repository.dart';

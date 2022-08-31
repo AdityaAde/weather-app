@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../models/current_location_weather_models.dart';
+import '../../models/current_location_weather_models/current_location_weather_models.dart';
 import '../../repositories/repositories.dart';
 
 part 'current_location_weather_event.dart';

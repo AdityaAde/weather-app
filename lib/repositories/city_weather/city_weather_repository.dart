@@ -1,5 +1,5 @@
 import '../../component/static_data.dart';
-import '../../models/current_location_weather_models.dart';
+import '../../models/current_location_weather_models/current_location_weather_models.dart';
 import '../../helper/network.dart';
 import 'city_weather.dart';
 
