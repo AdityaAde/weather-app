@@ -44,6 +44,7 @@ class SearchCityScreen extends StatelessWidget {
                     )),
                 onPressed: () {
                   context.read<CurrentLocationWeatherBloc>().add(GetWeatherSearchCityEvent(cityName: cityName));
+                  context.read<WeatherForecastCubit>().getSearchCityWeatherForecast(cityName);
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
                 },
                 child: Text(

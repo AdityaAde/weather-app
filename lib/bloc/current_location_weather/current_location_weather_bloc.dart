@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../injector.dart';
 import '../../models/current_location_weather_models/current_location_weather_models.dart';
 import '../../repositories/repositories.dart';
 
@@ -9,8 +10,8 @@ part 'current_location_weather_state.dart';
 
 class CurrentLocationWeatherBloc extends Bloc<CurrentLocationWeatherEvent, CurrentLocationWeatherState> {
   /// Fungsi untuk melakukan komunikasi pada API dan mendapatkan response nya
-  CurrentLocationWeatherRepository currentLocationWeatherRepository = CurrentLocationWeatherRepository();
-  CityWeatherRepository cityWeatherRepository = CityWeatherRepository();
+  final currentLocationWeatherRepository = locator<CurrentLocationWeatherRepository>();
+  final cityWeatherRepository = locator<CityWeatherRepository>();
 
   CurrentLocationWeatherBloc() : super(CurrentLocationWeatherLoading()) {
     on<GetCurrentLocationWeatherEvent>(_onGetCurrentLocationWeather);

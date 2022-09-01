@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:weather_app/injector.dart';
 
 import 'bloc/bloc.dart';
 import 'component/config.dart';
@@ -14,6 +15,8 @@ void main() {
   );
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  setupLocator();
 
   runApp(const MyApp());
 

@@ -1,6 +1,7 @@
 import 'package:geolocator/geolocator.dart';
 
 import '../../component/static_data.dart';
+import '../../injector.dart';
 import '../../models/current_location_weather_models/current_location_weather_models.dart';
 import '../../helper/network.dart';
 import '../current_location/current_location.dart';
@@ -33,7 +34,7 @@ class CurrentLocationWeatherRepository extends BaseCurrentLocationWeatherReposit
     //===================================================================
 
     // Fungsi untuk mendapatkan nilai dari lokasi saat ini
-    CurrentLocationRepository location = CurrentLocationRepository();
+    final location = locator<CurrentLocationRepository>();
     await location.getCurrentLocation();
 
     // Fungsi untuk melakukan komunikasi dengan API lalu mendapatkan data response nya

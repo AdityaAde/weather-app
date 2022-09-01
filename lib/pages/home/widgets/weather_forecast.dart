@@ -67,6 +67,7 @@ class WeatherForecast extends StatelessWidget {
             child: InkWell(
               onTap: () async {
                 context.read<CurrentLocationWeatherBloc>().add(GetCurrentLocationWeatherEvent());
+                context.read<WeatherForecastCubit>().getCurrenLocationtWeatherForecast();
               },
               child: Image.asset('assets/images/location.png'),
             ),

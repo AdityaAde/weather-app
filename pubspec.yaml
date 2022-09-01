@@ -11,13 +11,14 @@ environment:
 dependencies:
   chopper: ^4.0.6
   cupertino_icons: ^1.0.2
-  flutter_native_splash: ^2.2.8
   equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
+  flutter_native_splash: ^2.2.8
   freezed_annotation: ^2.1.0
   geolocator: ^9.0.1
+  get_it: ^7.2.0
   http: ^0.13.5
   json_annotation: ^4.6.0
 
@@ -34,7 +35,7 @@ dev_dependencies:
 flutter_native_splash:
   color: "#40cbd8"
   image: assets/images/splash-weather.png
-  android_12:
+  android_12: null
 
 flutter:
 
