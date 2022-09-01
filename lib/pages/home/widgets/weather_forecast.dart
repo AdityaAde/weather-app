@@ -104,7 +104,7 @@ class WeatherForecast extends StatelessWidget {
     return BlocBuilder<WeatherForecastCubit, WeatherForecastState>(
       builder: (context, state) {
         return state.when(loading: () {
-          return const Center(child: Text('Data tidak ditemukan'));
+          return const Center(child: Text('Sedang memuat data...'));
         }, loaded: ((dataWeatherForecast) {
           /// =====================================================================
           /// Data perkiraan cuaca dalam 5 Hari
